@@ -18,8 +18,8 @@ this.next = null;
         if (head == null) {
             head = newNode;
             tail = newNode;
-        } 
-else 
+        }
+else
 {
 tail.next = newNode;
 tail = newNode;
@@ -55,6 +55,7 @@ public static void main(String[] args) {
             {
             data1=sc.nextInt();
             list.insertBegin(data1);
+            System.out.println("Element Inserted");
             System.out.println("LINKED LIST AFTER INSERTING");
             list.displayList();
             }
@@ -66,10 +67,16 @@ public static void main(String[] args) {
             }
            }
     }
-public void insertBegin() 
-    {    
-        // TYPE YOUR CODE HERE   
-    } 
+ public void insertBegin(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+    }
 public void displayList() {
         Node current = head;
         while (current != null) {
